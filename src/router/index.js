@@ -14,6 +14,7 @@ import Vmodal from "../views/components/modal.vue";
 import Login from "../views/layouts/auth/Login.vue";
 import Register from "../views/layouts/auth/Register.vue";
 import ForgotPassword from "../views/layouts/auth/forgot-password.vue";
+import ActivityDashboard from "../views/components/activitydashboard.vue";
 
 // layouts
 import Blank from "../views/layouts/Blank.vue";
@@ -84,6 +85,15 @@ const routes = [
     component: Vmodal,
     meta: { title: "Modal" + appname },
   },
+  {
+    path: "/component/ActivityDashboard",
+    name: "DashboardActivities",
+    component: ActivityDashboard,
+    meta: {
+      title: "Activity Dashboard" + appname,
+    },
+  },
+
   // layouts
 
   {

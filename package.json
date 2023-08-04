@@ -33,8 +33,10 @@
     "v-tables-3": "^0.4.7",
     "vue": "^3.2.13",
     "vue-chartjs": "^4.0.2",
+    "vue-graph": "^0.9.3",
     "vue-perfect-scrollbar": "^0.2.1",
     "vue-router": "^4.0.3",
+    "vue-timeline-component": "^0.1.6",
     "vue3-apexcharts": "^1.4.1",
     "vue3-perfect-scrollbar": "^1.6.0"
   },

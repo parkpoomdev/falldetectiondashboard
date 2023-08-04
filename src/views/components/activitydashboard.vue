@@ -28,7 +28,7 @@
     <!-- grid wrapper card -->
     <div class="wrapper-card grid lg:grid-cols-4 grid-cols-1 md:grid-cols-2 gap-2 mt-5">
       <!-- card  -->
-      <div class="card bg-white dark:bg-gray-800 w-full rounded-md p-5 border dark:border-gray-700 flex">
+      <!-- <div class="card bg-white dark:bg-gray-800 w-full rounded-md p-5 border dark:border-gray-700 flex">
         <div class="p-2 max-w-sm">
           <div class="bg-orange-200 rounded-full w-14 h-14 text-lg p-3 text-orange-600 mx-auto">
             <span class="">
@@ -47,9 +47,9 @@
           </p>
           <h2 class="font-normal text-gray-400 text-md mt-1">Total Payouts</h2>
         </div>
-      </div>
+      </div> -->
       <!-- end card -->
-      <div class="card bg-white dark:bg-gray-800 w-full rounded-md p-5 border dark:border-gray-700 flex">
+      <!-- <div class="card bg-white dark:bg-gray-800 w-full rounded-md p-5 border dark:border-gray-700 flex">
         <div class="p-2 max-w-sm">
           <div class="bg-green-200 rounded-full w-14 h-14 text-lg p-3 text-green-600 mx-auto">
             <span class="">
@@ -68,9 +68,9 @@
           </p>
           <h2 class="font-normal text-gray-400 text-md mt-1">Total Sales</h2>
         </div>
-      </div>
+      </div> -->
       <!-- end card -->
-      <div class="card bg-white dark:bg-gray-800 w-full rounded-md p-5 border dark:border-gray-700 flex">
+      <!-- <div class="card bg-white dark:bg-gray-800 w-full rounded-md p-5 border dark:border-gray-700 flex">
         <div class="p-2 max-w-sm">
           <div class="bg-red-200 rounded-full w-14 h-14 text-lg p-3 text-red-600 mx-auto">
             <span class="">
@@ -93,9 +93,9 @@
             Total Customers
           </h2>
         </div>
-      </div>
+      </div> -->
       <!-- end card -->
-      <div class="card bg-white dark:bg-gray-800 w-full rounded-md p-5 border dark:border-gray-700 flex">
+      <!-- <div class="card bg-white dark:bg-gray-800 w-full rounded-md p-5 border dark:border-gray-700 flex">
         <div class="p-2 max-w-sm">
           <div class="bg-purple-200 rounded-full w-14 h-14 text-lg p-3 text-purple-600 mx-auto">
             <span class="">
@@ -117,136 +117,14 @@
           </p>
           <h2 class="font-normal text-gray-400 text-md mt-1">Total Visit</h2>
         </div>
-      </div>
+      </div> -->
       <!-- end card -->
     </div>
     <!-- end wrapper card -->
-    <div class="mt-2 lg:flex block lg:gap-2 relative">
-      <div class="bg-white dark:bg-gray-800 p-0 lg:w-3/4 w-full rounded-md box-border border dark:border-gray-700">
-        <div class="p-5 flex justify-between">
-          <div>
-            <h2 class="font-medium text-sm text-gray-800 dark:text-gray-200">
-              SALES
-            </h2>
-            <h1 class="font-semibold text-4xl text-gray-800 dark:text-gray-200">
-              72%
-            </h1>
 
-            <p class="text-gray-400 font-lexend font-normal">
-              your sales chart per-years
-            </p>
-          </div>
 
-          <div class="flex gap-5">
-            <span class="">
-              <h2 class="text-red-500 flex">
-                <span class="mr-2"> 15.9% </span><span>
-                  <Icon icon="akar-icons:arrow-down" />
-                </span>
-              </h2>
-            </span>
-            <span class="">
-              <h2 class="text-green-500 flex">
-                <span class="mr-2"> 87.9% </span><span>
-                  <Icon icon="akar-icons:arrow-up" />
-                </span>
-              </h2>
-            </span>
-          </div>
-        </div>
-
-        <apexchart width="100%" height="260" type="area" :options="optionsArea" :series="seriesArea" :sparkline="{
-          enabled: true,
-        }"></apexchart>
-        <br />
-        <hr />
-        <div class="wrapper-button p-5 flex justify-between mt-3">
-          <select name="" id=""
-            class="dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 border max-w-lg px-4 py-3 block rounded-md text-gray-500 dark:text-gray-400">
-            <option value="">Last 7 years</option>
-          </select>
-          <button class="uppercase border-b border-red-600 text-red-600">
-            Sales Report
-          </button>
-        </div>
-      </div>
-      <div class="bg-white dark:bg-gray-800 p-5 lg:mt-0 mt-4 lg:w-2/4 border dark:border-gray-700 rounded-md w-full">
-        <div class="">
-          <h2 class="text-lg font-semibold dark:text-gray-200">
-            PARTNER SALES
-          </h2>
-          <p class="text-gray-400">This is list if your partner online.</p>
-        </div>
-        <perfect-scrollbar class="divide-y h-96 mt-5 dark:divide-gray-700">
-          <div class="p-3 w-full">
-            <div class="flex gap-5">
-              <div>
-                <img class="w-14 rounded-md" src="../assets/img/user1.png" alt="" />
-              </div>
-              <div class="mt-1">
-                <h2 class="dark:text-gray-200">Elizabeth Begum</h2>
-                <p class="text-sm dark:text-gray-500 text-gray-400">
-                  Active now
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="p-3 w-full">
-            <div class="flex gap-5">
-              <div>
-                <img class="w-14 rounded-md" src="../assets/img/user2.png" alt="" />
-              </div>
-              <div class="mt-1">
-                <h2 class="dark:text-gray-200">Ethan Roger</h2>
-                <p class="text-sm dark:text-gray-500 text-gray-400">
-                  Active now
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="p-3 w-full">
-            <div class="flex gap-5">
-              <div>
-                <img class="w-14 rounded-md" src="../assets/img/user3.png" alt="" />
-              </div>
-              <div class="mt-1">
-                <h2 class="dark:text-gray-200">Tobi Ferreira</h2>
-                <p class="text-sm dark:text-gray-500 text-gray-400">
-                  last online 2 hours ago
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="p-3 w-full">
-            <div class="flex gap-5">
-              <div>
-                <img class="w-14 rounded-md" src="../assets/img/user4.png" alt="" />
-              </div>
-              <div class="mt-1">
-                <h2 class="dark:text-gray-200">Taylor neal</h2>
-                <p class="text-sm dark:text-gray-500 text-gray-400">
-                  last online 2 minutes ago
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="p-3 w-full">
-            <div class="flex gap-5">
-              <div>
-                <img class="w-14 rounded-md" src="../assets/img/user5.png" alt="" />
-              </div>
-              <div class="mt-1">
-                <h2 class="dark:text-gray-200">Bruno Barron</h2>
-                <p class="text-sm dark:text-gray-500 text-gray-400">
-                  last online 2 hours ago
-                </p>
-              </div>
-            </div>
-          </div>
-        </perfect-scrollbar>
-      </div>
-    </div>
-    <div class="mt-2 lg:flex block lg:gap-2">
+    
+    <!-- <div class="mt-2 lg:flex block lg:gap-2">
       <div class="mt-2 bg-white dark:bg-gray-800 p-0 w-full rounded-md box-border border dark:border-gray-700">
         <div class="head p-5">
           <h2 class="font-bold text-lg text-gray-800 dark:text-gray-200">
@@ -341,30 +219,70 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="mt-2 bg-white dark:bg-gray-800 p-5 w-full rounded-md box-border border dark:border-gray-700">
       <h2 class="font-bold text-lg text-gray-800 dark:text-gray-200">
-        Latest Transactions
+        Activity Infomation
       </h2>
       <p class="text-gray-400 font-lexend font-normal">
-        This is a list of latest transactions
+        This is a list of latest activities detection
       </p>
       <div class="wrapping-table mt-10">
+
+
+        <div class="wrapper-button p-5 flex justify-between mt-3">
+
+          <select name="" id=""
+            class="dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 border max-w-lg px-4 py-3 block rounded-md text-gray-500 dark:text-gray-400">
+            <option value="">Camera 1</option>
+          </select>
+
+          <select name="" id=""
+            class="dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 border max-w-lg px-4 py-3 block rounded-md text-gray-500 dark:text-gray-400">
+            <option value="">House ID</option>
+          </select>
+
+          <select name="" id=""
+            class="dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 border max-w-lg px-4 py-3 block rounded-md text-gray-500 dark:text-gray-400">
+            <option value="">01/01/2023</option>
+          </select>
+
+          <select name="" id=""
+            class="dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 border max-w-lg px-4 py-3 block rounded-md text-gray-500 dark:text-gray-400">
+            <option value="">30/03/2023</option>
+          </select>
+
+          <select name="" id=""
+            class="dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 border max-w-lg px-4 py-3 block rounded-md text-gray-500 dark:text-gray-400">
+            <option value="">Months</option>
+          </select>
+
+        </div>
+
+
         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 lg:overflow-auto overflow-x-scroll">
           <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
-              <th scope="col" class="uppercase px-6 py-3">
-                Transaction
-              </th>
-              <th scope="col" class="uppercase px-6 py-3">
-                Date & Time
-              </th>
-              <th scope="col" class="uppercase px-6 py-3">
-                Amount
-              </th>
-              <th scope="col" class="uppercase px-6 py-3">
-                Status
-              </th>
+              <td class="px-6 py-3">
+                Patient's Name
+              </td>
+              <td class="px-6 py-3">
+                Activity Description
+              </td>
+              <td class="px-6 py-3">
+                Camera ID Value
+              </td>
+              <td class="px-6 py-3">
+                Posture Description
+              </td>
+              <td class="px-6 py-3">
+                Date/Time Value
+              </td>
+              <td class="px-6 py-3">
+                <!-- Displaying image from a URL -->
+                <!-- <img src="URL_to_Image_Capture" alt="Image Description"/> -->
+                Image Description
+              </td>
             </tr>
           </thead>
           <tbody>
@@ -397,10 +315,10 @@
         </table>
       </div>
       <div class="wrapper-button flex justify-between mt-3">
-        <select name="" id=""
+        <!-- <select name="" id=""
           class="dark:bg-gray-800 dark:hover:bg-gray-700 border dark:border-gray-700 max-w-lg px-4 py-3 block rounded-md text-gray-500 dark:text-gray-400">
           <option value="">Last 7 years</option>
-        </select>
+        </select> -->
         <button class="uppercase border-b border-red-600 text-red-600">
           Transaction Report
         </button>
