@@ -41,6 +41,9 @@
           </div>
         </div>
 
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+
         <div class="block p-2 w-full">
           <p class="font-semibold text-gray-900 dark:text-gray-200 text-xl">
             Rp.23.423.009
