@@ -1,30 +1,6 @@
 <template>
   <div class="dashboard p-4">
     <!-- end nav -->
-    <div class="mt-2 w-full">
-      <div class="lg:flex grid-cols-1 lg:space-y-0 space-y-3 gap-5 justify-between">
-        <div>
-          <p class="uppercase text-xs text-gray-700 font-semibold">overview</p>
-          <h1 class="text-2xl text-gray-900 dark:text-gray-200 font-medium">
-            Dashboard
-          </h1>
-        </div>
-        <div class="flex gap-2">
-          <button
-            class="bg-white dark:bg-gray-800 hover:border-gray-200 dark:hover:bg-gray-700 dark:text-white dark:border-gray-700 border rounded py-2 px-5">
-            New view
-          </button>
-          <button
-            class="bg-primary border flex gap-2 text-white hover:bg-primary/80 dark:border-gray-700 rounded py-3 px-5">
-            <span class="icon text-2xl">
-              <Icon icon="ic:twotone-plus" />
-            </span>
-            <span class="text"> Create New Report</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
     <!-- grid wrapper card -->
     <div class="wrapper-card grid lg:grid-cols-4 grid-cols-1 md:grid-cols-2 gap-2 mt-5">
       <!-- card  -->
@@ -158,18 +134,13 @@
 
         <div class="p-5 flex justify-between">
           <div>
-            
-
             <h2 class="font-medium text-sm text-gray-800 dark:text-gray-200">
               Fall Detection
             </h2>
             <h1 class="font-semibold text-4xl text-gray-800 dark:text-gray-200">
               Activity Analysis
             </h1>
-
           </div>
-          
-
           <!-- <div class="flex gap-5">
             <span class="">
               <h2 class="text-red-500 flex">
@@ -363,6 +334,7 @@
 <script>
 // @ is an alias to /src
 import { Icon } from "@iconify/vue";
+import axios from 'axios';
 
 export default {
   name: "Dashboard",

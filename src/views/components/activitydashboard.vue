@@ -1,30 +1,6 @@
 <template>
   <div class="dashboard p-4">
     <!-- end nav -->
-    <div class="mt-2 w-full">
-      <div class="lg:flex grid-cols-1 lg:space-y-0 space-y-3 gap-5 justify-between">
-        <div>
-          <p class="uppercase text-xs text-gray-700 font-semibold">overview</p>
-          <h1 class="text-2xl text-gray-900 dark:text-gray-200 font-medium">
-            Dashboard
-          </h1>
-        </div>
-        <div class="flex gap-2">
-          <button
-            class="bg-white dark:bg-gray-800 hover:border-gray-200 dark:hover:bg-gray-700 dark:text-white dark:border-gray-700 border rounded py-2 px-5">
-            New view
-          </button>
-          <button
-            class="bg-primary border flex gap-2 text-white hover:bg-primary/80 dark:border-gray-700 rounded py-3 px-5">
-            <span class="icon text-2xl">
-              <Icon icon="ic:twotone-plus" />
-            </span>
-            <span class="text"> Create New Report</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
     <!-- grid wrapper card -->
     <div class="wrapper-card grid lg:grid-cols-4 grid-cols-1 md:grid-cols-2 gap-2 mt-5">
       <!-- card  -->
@@ -232,9 +208,7 @@
       </p>
       <div class="wrapping-table mt-10">
 
-
         <div class="wrapper-button p-5 flex justify-between mt-3">
-
           <select name="" id=""
             class="dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 border max-w-lg px-4 py-3 block rounded-md text-gray-500 dark:text-gray-400">
             <option value="">Camera 1</option>
@@ -313,6 +287,12 @@
                   {{ items.statusTransaction }}
                 </span>
               </td>
+              <td class="px-6 py-4">
+                {{ items.amount }}
+              </td>
+              <td class="px-6 py-4">
+                {{ items.amount }}
+              </td>
             </tr>
           </tbody>
         </table>
@@ -322,9 +302,9 @@
           class="dark:bg-gray-800 dark:hover:bg-gray-700 border dark:border-gray-700 max-w-lg px-4 py-3 block rounded-md text-gray-500 dark:text-gray-400">
           <option value="">Last 7 years</option>
         </select> -->
-        <button class="uppercase border-b border-red-600 text-red-600">
+        <!-- <button class="uppercase border-b border-red-600 text-red-600">
           Transaction Report
-        </button>
+        </button> -->
       </div>
     </div>
   </div>
