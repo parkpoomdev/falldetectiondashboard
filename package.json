@@ -35,6 +35,7 @@
     "vue": "^3.2.13",
     "vue-chartjs": "^4.0.2",
     "vue-graph": "^0.9.3",
+    "vue-lazyload": "^3.0.0",
     "vue-perfect-scrollbar": "^0.2.1",
     "vue-router": "^4.0.3",
     "vue-timeline-component": "^0.1.6",

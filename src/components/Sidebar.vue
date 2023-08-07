@@ -44,11 +44,11 @@
               <template v-slot:content>
                 <router-link to="/component/activitydashboard"
                   class="w-full text-left block rounded-md p-3 hover:bg-gray-200 dark:hover:bg-gray-700">
-                  Activity Detection
+                  Activity Summary
                 </router-link>
                 <router-link to="/component/accordion"
                   class="w-full text-left block rounded-md p-3 hover:bg-gray-200 dark:hover:bg-gray-700">
-                  Activity Summary
+                  Activity Detection  
                 </router-link>
               </template>
             </menu-accordion>
