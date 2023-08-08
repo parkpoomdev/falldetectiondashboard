@@ -2,268 +2,20 @@
   <div class="dashboard p-4">
     <!-- end nav -->
     <!-- grid wrapper card -->
+    <div class="flex justify-center">
+      <div class="text-center">
+        <button class="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-full disabled:opacity-50 flex items-center" @click="resetZoom">
+          <Icon icon="tabler:zoom-reset" /> Reset Zoom
+        </button>
+      </div>
+    </div>
+
     <div class="wrapper-card grid lg:grid-cols-4 grid-cols-1 md:grid-cols-2 gap-2 mt-5">
-      <!-- card  -->
-      <!-- <div class="card bg-white dark:bg-gray-800 w-full rounded-md p-5 border dark:border-gray-700 flex">
-        <div class="p-2 max-w-sm">
-          <div class="bg-orange-200 rounded-full w-14 h-14 text-lg p-3 text-orange-600 mx-auto">
-            <span class="">
-              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="30px" height="30px"
-                preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                <path fill="currentColor"
-                  d="M10 16V8a2 2 0 0 1 2-2h9V5c0-1.1-.9-2-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-1h-9a2 2 0 0 1-2-2zm3-8c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h9V8h-9zm3 5.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5s1.5.67 1.5 1.5s-.67 1.5-1.5 1.5z" />
-              </svg>
-            </span>
-          </div>
-        </div>
-
-        <div class="block p-2 w-full">
-          <p class="font-semibold text-gray-900 dark:text-gray-200 text-xl">
-            Rp.23.423.009
-          </p>
-          <h2 class="font-normal text-gray-400 text-md mt-1">Total Payouts</h2>
-        </div>
-      </div> -->
-      <!-- end card -->
-      <!-- <div class="card bg-white dark:bg-gray-800 w-full rounded-md p-5 border dark:border-gray-700 flex">
-        <div class="p-2 max-w-sm">
-          <div class="bg-green-200 rounded-full w-14 h-14 text-lg p-3 text-green-600 mx-auto">
-            <span class="">
-              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="30px" height="30px"
-                preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                <path fill="currentColor"
-                  d="M5 22h14a2 2 0 0 0 2-2V9a1 1 0 0 0-1-1h-3v-.777c0-2.609-1.903-4.945-4.5-5.198A5.005 5.005 0 0 0 7 7v1H4a1 1 0 0 0-1 1v11a2 2 0 0 0 2 2zm12-12v2h-2v-2h2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v1H9V7zm-2 3h2v2H7v-2z" />
-              </svg>
-            </span>
-          </div>
-        </div>
-
-        <div class="block p-2 w-full">
-          <p class="font-semibold text-gray-900 dark:text-gray-200 text-xl">
-            256
-          </p>
-          <h2 class="font-normal text-gray-400 text-md mt-1">Total Sales</h2>
-        </div>
-      </div> -->
-      <!-- end card -->
-      <!-- <div class="card bg-white dark:bg-gray-800 w-full rounded-md p-5 border dark:border-gray-700 flex">
-        <div class="p-2 max-w-sm">
-          <div class="bg-red-200 rounded-full w-14 h-14 text-lg p-3 text-red-600 mx-auto">
-            <span class="">
-              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="30px" height="30px"
-                preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
-                <path fill="none"
-                  d="M8.007 24.93A4.996 4.996 0 0 1 13 20h6a4.996 4.996 0 0 1 4.993 4.93a11.94 11.94 0 0 1-15.986 0ZM20.5 12.5A4.5 4.5 0 1 1 16 8a4.5 4.5 0 0 1 4.5 4.5Z" />
-                <path fill="currentColor"
-                  d="M26.749 24.93A13.99 13.99 0 1 0 2 16a13.899 13.899 0 0 0 3.251 8.93l-.02.017c.07.084.15.156.222.239c.09.103.187.2.28.3c.28.304.568.596.87.87c.092.084.187.162.28.242c.32.276.649.538.99.782c.044.03.084.069.128.1v-.012a13.901 13.901 0 0 0 16 0v.012c.044-.031.083-.07.128-.1c.34-.245.67-.506.99-.782c.093-.08.188-.159.28-.242c.302-.275.59-.566.87-.87c.093-.1.189-.197.28-.3c.071-.083.152-.155.222-.24ZM16 8a4.5 4.5 0 1 1-4.5 4.5A4.5 4.5 0 0 1 16 8ZM8.007 24.93A4.996 4.996 0 0 1 13 20h6a4.996 4.996 0 0 1 4.993 4.93a11.94 11.94 0 0 1-15.986 0Z" />
-              </svg>
-            </span>
-          </div>
-        </div>
-
-        <div class="block p-2 w-full">
-          <p class="font-semibold text-gray-900 dark:text-gray-200 text-xl">
-            3569
-          </p>
-          <h2 class="font-normal text-gray-400 text-md mt-1">
-            Total Customers
-          </h2>
-        </div>
-      </div> -->
-      <!-- end card -->
-      <!-- <div class="card bg-white dark:bg-gray-800 w-full rounded-md p-5 border dark:border-gray-700 flex">
-        <div class="p-2 max-w-sm">
-          <div class="bg-purple-200 rounded-full w-14 h-14 text-lg p-3 text-purple-600 mx-auto">
-            <span class="">
-              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="30px" height="30px"
-                preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16">
-                <g fill="currentColor">
-                  <path d="M15 13v1H1.5l-.5-.5V0h1v13h13Z" />
-                  <path
-                    d="M13 3.207L7.854 8.354h-.708L5.5 6.707l-3.646 3.647l-.708-.708l4-4h.708L7.5 7.293l5.146-5.147h.707l2 2l-.707.708L13 3.207Z" />
-                </g>
-              </svg>
-            </span>
-          </div>
-        </div>
-
-        <div class="block p-2 w-full">
-          <p class="font-semibold text-gray-900 dark:text-gray-200 text-xl">
-            7230
-          </p>
-          <h2 class="font-normal text-gray-400 text-md mt-1">Total Visit</h2>
-        </div>
-      </div> -->
-      <!-- end card -->
+      <canvas id="myChart"></canvas>
     </div>
+
     <!-- end wrapper card -->
-    <div class="mt-2 bg-white dark:bg-gray-800 p-5 w-full rounded-md box-border border dark:border-gray-700">
-      <div class="mt-2 bg-white dark:bg-gray-800 p-5 w-full rounded-md box-border border dark:border-gray-700">
-        
-        <div class="wrapper-button p-5 flex justify-between mt-3">
 
-          <select name="" id=""
-            class="dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 border max-w-lg px-4 py-3 block rounded-md text-gray-500 dark:text-gray-400">
-            <option value="">Camera 1</option>
-          </select>
-
-          <select name="" id=""
-            class="dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 border max-w-lg px-4 py-3 block rounded-md text-gray-500 dark:text-gray-400">
-            <option value="">House ID</option>
-          </select>
-
-          <select name="" id=""
-            class="dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 border max-w-lg px-4 py-3 block rounded-md text-gray-500 dark:text-gray-400">
-            <option value="">01/01/2023</option>
-          </select>
-
-          <select name="" id=""
-            class="dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 border max-w-lg px-4 py-3 block rounded-md text-gray-500 dark:text-gray-400">
-            <option value="">30/03/2023</option>
-          </select>
-
-          <select name="" id=""
-            class="dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 border max-w-lg px-4 py-3 block rounded-md text-gray-500 dark:text-gray-400">
-            <option value="">Months</option>
-          </select>
-
-          <!-- <button class="uppercase border-b border-red-600 text-red-600">
-            Sales Report
-          </button> -->
-        </div>
-
-        <div class="p-5 flex justify-between">
-          <div>
-            <h2 class="font-medium text-sm text-gray-800 dark:text-gray-200">
-              Fall Detection: Real-time data detection
-            </h2>
-            <h1 class="font-semibold text-4xl text-gray-800 dark:text-gray-200">
-              Activity Analysis
-            </h1>
-          </div>
-          <!-- <div class="flex gap-5">
-            <span class="">
-              <h2 class="text-red-500 flex">
-                <span class="mr-2"> 15.9% </span><span>
-                  <Icon icon="akar-icons:arrow-down" />
-                </span>
-              </h2>
-            </span>
-            <span class="">
-              <h2 class="text-green-500 flex">
-                <span class="mr-2"> 87.9% </span><span>
-                  <Icon icon="akar-icons:arrow-up" />
-                </span>
-              </h2>
-            </span>
-          </div> -->
-
-        </div>
-
-        <apexchart width="100%" height="260" type="area" :options="optionsArea" :series="seriesArea" :sparkline="{
-          enabled: true,
-        }"></apexchart>
-        <br />
-        <hr />
-      </div>
-   
-    </div>
-    <!-- <div class="mt-2 lg:flex block lg:gap-2">
-      <div class="mt-2 bg-white dark:bg-gray-800 p-0 w-full rounded-md box-border border dark:border-gray-700">
-        <div class="head p-5">
-          <h2 class="font-bold text-lg text-gray-800 dark:text-gray-200">
-            1,780
-          </h2>
-          <p class="text-gray-400 font-lexend font-normal">
-            New products this week
-          </p>
-          <span class="float-right">
-            <h2 class="text-green-500 -mt-12 flex">
-              <span class="mr-2"> 27.9% </span><span>
-                <Icon icon="akar-icons:arrow-up" />
-              </span>
-            </h2>
-          </span>
-        </div>
-        <div class="wrapper-chart mt-5 pr-2 pl-2">
-          <apexchart width="100%" height="380" type="bar" :options="optionsBar" :series="seriesBar"></apexchart>
-          <br />
-          <hr />
-          <div class="footer p-5">
-            <div class="wrapper-button flex justify-between mt-3">
-              <select name="" id=""
-                class="dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 border max-w-lg px-4 py-3 block rounded-md text-gray-500 dark:text-gray-400">
-                <option value="">Last 7 days</option>
-              </select>
-              <button class="uppercase border-b border-red-600 text-red-600">
-                Product Report
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="mt-2 bg-white dark:bg-gray-800 p-0 w-full rounded-md box-border border dark:border-gray-700">
-        <div class="head p-5">
-          <h2 class="font-bold text-lg text-gray-800 dark:text-gray-200">
-            5,355
-          </h2>
-          <p class="text-gray-400 font-lexend font-normal">Visitor this week</p>
-
-          <span class="float-right">
-            <h2 class="text-green-500 -mt-12 flex">
-              <span class="mr-2"> 47.9% </span><span>
-                <Icon icon="akar-icons:arrow-up" />
-              </span>
-            </h2>
-          </span>
-        </div>
-        <div class="wrapper-chart mt-5">
-          <apexchart width="100%" height="380" type="area" :options="optionsVisitor" :series="seriesVisitor"></apexchart>
-          <br />
-          <hr />
-          <div class="footer p-5">
-            <div class="wrapper-button flex justify-between mt-3">
-              <select name="" id=""
-                class="dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 border max-w-lg px-4 py-3 block rounded-md text-gray-500 dark:text-gray-400">
-                <option value="">Last 7 days</option>
-              </select>
-              <button class="uppercase border-b border-red-600 text-red-600">
-                Vistor Report
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="mt-2 bg-white dark:bg-gray-800 p-0 w-full rounded-md box-border border dark:border-gray-700">
-        <div class="head p-5">
-          <h2 class="font-bold text-lg text-gray-800 dark:text-gray-200">
-            475
-          </h2>
-          <p class="text-gray-400 font-lexend font-normal">
-            User signups this week
-          </p>
-        </div>
-
-        <div class="wrapper-chart mt-5">
-          <apexchart width="100%" height="380" type="pie" :options="optionsDonut" :series="seriesDonut"></apexchart>
-          <div class="p-3"></div>
-          <br />
-          <hr />
-          <div class="footer p-5">
-            <div class="wrapper-button flex justify-between mt-3">
-              <select name="" id=""
-                class="dark:bg-gray-800 dark:hover:bg-gray-700 border dark:border-gray-700 max-w-lg px-4 py-3 block rounded-md text-gray-500 dark:text-gray-400">
-                <option value="">Last 7 years</option>
-              </select>
-
-              <button class="uppercase border-b border-red-600 text-red-600">
-                User Report
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
     <div class="mt-2 bg-white dark:bg-gray-800 p-5 w-full rounded-md box-border border dark:border-gray-700">
       <h2 class="font-bold text-lg text-gray-800 dark:text-gray-200">
         Activity Infomation
@@ -273,30 +25,7 @@
       </p>
       <div class="wrapping-table mt-10">
         <div class="wrapper-button p-5 flex justify-between mt-3">
-          <!-- <select name="" id=""
-            class="dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 border max-w-lg px-4 py-3 block rounded-md text-gray-500 dark:text-gray-400">
-            <option value="">Camera 1</option>
-          </select>
-
-          <select name="" id=""
-            class="dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 border max-w-lg px-4 py-3 block rounded-md text-gray-500 dark:text-gray-400">
-            <option value="">House ID</option>
-          </select>
-
-          <select name="" id=""
-            class="dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 border max-w-lg px-4 py-3 block rounded-md text-gray-500 dark:text-gray-400">
-            <option value="">01/01/2023</option>
-          </select>
-
-          <select name="" id=""
-            class="dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 border max-w-lg px-4 py-3 block rounded-md text-gray-500 dark:text-gray-400">
-            <option value="">30/03/2023</option>
-          </select>
-
-          <select name="" id=""
-            class="dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 border max-w-lg px-4 py-3 block rounded-md text-gray-500 dark:text-gray-400">
-            <option value="">Months</option>
-          </select> -->
+         
           <!-- Camera Select Box -->
           <select v-model="selectedCamera" class="dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 border max-w-lg px-4 py-3 block rounded-md text-gray-500 dark:text-gray-400">
               <option value="All Cameras">All Cameras</option>
@@ -329,16 +58,6 @@
               </option>
           </select>
 
-
-
-          <!-- <select v-model="selectedMonth">
-              <option value="">Select Month</option>
-          </select> -->
-
-
-          <!-- <select v-model="selectedMonth" class="dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 border max-w-lg px-4 py-3 block rounded-md text-gray-500 dark:text-gray-400">
-              <option value="">Months</option>
-          </select> -->
         </div>
       </div>
 
@@ -374,8 +93,6 @@
               </tr>
             </tbody>
           </table>
-
-
 
                 <!-- Pagination Controls -->
           <div class="flex justify-center mt-4 space-x-2">
@@ -413,11 +130,38 @@
   </div>
 </template>
 
+<!-- //....................................................
+//.............................iii....................
+//.............................iii.............tttt...
+//.............................iii.............tttt...
+//.............................iii.............tttt...
+//..ssssssss...ccccccc..rrrrrr.iii.ipppppppp..pttttt..
+//..ssssssss..ccccccccc.rrrrrr.iii.ippppppppp.pttttt..
+//.sssssssssssccccccccc.rrrrrr.iii.ipppppppppppttttt..
+//.sssssssssssccc..cccc.rrrr...iii.ipppp.ppppp.tttt...
+//..ssssssss.sccc.......rrr....iii.ippp...pppp.tttt...
+//..ssssssss.sccc.......rrr....iii.ippp...pppp.tttt...
+//.sssssssssssccc..cccc.rrr....iii.ippp...pppp.tttt...
+//.sssss.sssssccccccccc.rrr....iii.ipppppppppp.tttt...
+//.ssssssssss.cccccccc..rrr....iii.ippppppppp..ttttt..
+//..ssssssss..cccccccc..rrr....iii.ippppppppp..ttttt..
+//...ssssss.....cccc...............ippp.ppp......ttt..
+//.................................ippp...............
+//.................................ippp...............
+//.................................ippp...............
+//.................................................... -->
+
 <script>
 // @ is an alias to /src
 import { Icon } from "@iconify/vue";
 import axios from 'axios';
 import VueLazyload from 'vue-lazyload';
+import Chart from 'chart.js/auto';
+import * as d3 from 'd3';
+import 'chartjs-adapter-date-fns';
+import zoomPlugin from 'chartjs-plugin-zoom'; // Import the zoom plugin
+
+Chart.register(zoomPlugin); // Register the zoom plugin
 
 
 export default {
@@ -431,7 +175,7 @@ export default {
       // https://apexcharts.com/docs/chart-types/line-chart/
 
       // chart data area
-
+      chart: null,
       currentPage: 1, // Currently viewed page
       itemsPerPage: 5, // Adjust this to show more or fewer items per page
 
@@ -696,12 +440,111 @@ export default {
     goToPage(page) {
       this.currentPage = page;
     },
+  
+    resetZoom() {
+      if (this.chart) {
+        this.chart.resetZoom(); // Call resetZoom method on chart instance
+      }
+    },
   },
   created() {
     this.fetchActivities();
   },
+  components: {
+		Icon,
+	},
   mounted() {
     this.fetchActivities();
+
+    var categories = ['sit', 'walk', 'fall', 'stand', 'fall down', 'bend down to pick up things', 'sit and wave', 'stand and wave', 'sit and clap hands', 'stand and clap hands', 'sit and talk on the phone', 'stand and talk on the phone', 'sit and point', 'stand and point', 'sit and look at the wrist watch', 'stand and look at the wrist watch', 'unstable movement'];
+
+    // Define a color for each category
+    var categoryColors = {
+      'fall': 'red',
+      'fall down': 'red',
+      // Add more colors as needed for each category
+    };
+
+
+    // Generate or load the data points (this example generates random data)
+    const allDataPoints = Array.from({ length: 1000 }, (_, i) => {
+      const activity = categories[Math.floor(Math.random() * categories.length)];
+      const isRed = ['fall', 'fall down'].includes(activity);
+      return {
+        x: new Date(2023, 7, 8 + Math.floor(i / 24), i % 24), // Example data across several days
+        y: categories.indexOf(activity),
+        backgroundColor: isRed ? 'red' : 'blue',
+      };
+    });
+
+
+    // Filter data points for today
+    const today = new Date();
+    
+    const dataPoints = Array.from({ length: 24 }, (_, i) => {
+      const activity = categories[Math.floor(Math.random() * categories.length)];
+      return {
+        x: new Date(2023, 6, 8, i), // 8 June 2023
+        y: categories.indexOf(activity),
+        backgroundColor: ['fall', 'fall down'].includes(activity) ? 'red' : 'blue',
+      };
+    });
+    
+    var ctx = document.getElementById('myChart').getContext('2d');
+
+    this.chart = new Chart(ctx, {
+      type: 'scatter',
+      data: {
+        datasets: [
+          {
+            label: 'Activity',
+            data: dataPoints,
+            borderColor: dataPoints.map((point) => point.backgroundColor),
+            backgroundColor: dataPoints.map((point) => point.backgroundColor),
+            pointRadius: 5,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          x: {
+            type: 'time',
+            time: {
+              unit: 'hour',
+            },
+          },
+          y: {
+            type: 'linear',
+            ticks: {
+              callback: (value) => categories[value],
+              stepSize: 1,
+              min: 0,
+              max: categories.length - 1,
+            },
+          },
+        },
+        plugins: {
+          zoom: {
+            pan: {
+              enabled: true,
+              mode: 'xy',
+            },
+            zoom: {
+              wheel: {
+                enabled: true,
+              },
+              pinch: {
+                enabled: true,
+              },
+              mode: 'xy',
+            },
+          },
+        },
+      },
+    });
+
   }
 };
+
+
 </script>
