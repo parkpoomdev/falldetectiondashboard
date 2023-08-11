@@ -195,8 +195,9 @@
             <tbody>
               <!-- Loop through the activities for the current page -->
               <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50" 
-                  v-for="(activity, index) in currentActivities" 
-                  :key="activity.activity_id">
+                v-for="(activity, index) in currentActivities" 
+                :key="activity.activity_id">
+                  
                 <td class="px-6 py-4">{{ activity.timestamp }}</td>
                 <td class="px-6 py-4">
                   <span :class="getActivityColor(activity.activity_type) + ' px-3 py-1 rounded-md'">
@@ -273,7 +274,7 @@ export default {
 
       currentPage: 1, // Currently viewed page
       itemsPerPage: 5, // Adjust this to show more or fewer items per page
-
+      
    
       optionsArea: {
         xaxis: {
@@ -476,37 +477,47 @@ export default {
     // end chart data line
   },
   computed: {
-    filteredActivities() {
-        return this.activities.filter(activity => {
-            return (this.selectedCamera === "All Cameras" || activity.camera_id == this.selectedCamera) &&
-                    (this.selectedHouse === "All Houses" || activity.house_id == this.selectedHouse) &&
-                    (this.selectedStartDate === "All Start Dates" || new Date(activity.timestamp) >= new Date(this.selectedStartDate)) &&
-                    (this.selectedEndDate === "All End Dates" || new Date(activity.timestamp) <= new Date(this.selectedEndDate));
-        });
-    },
-    distinctCameras() {
-        return [...new Set(this.activities.map(activity => activity.camera_id))];
-    },
-    distinctHouses() {
-        return [...new Set(this.activities.map(activity => activity.house_id))];
-    },
-    distinctStartDates() {
-        return [...new Set(this.activities.map(activity => activity.timestamp.split('T')[0]))];
-    },
-    distinctEndDates() {
-        return this.distinctStartDates; // Since you want distinct dates, we can reuse the distinctStartDates
-    },
-    // Calculating the total number of pages
-    totalPages() {
-      return Math.ceil(this.activities.length / this.itemsPerPage);
-    },
+      filteredActivities() {
+          return this.activities.filter(activity => {
+              return (this.selectedCamera === "All Cameras" || activity.camera_id == this.selectedCamera) &&
+                      (this.selectedHouse === "All Houses" || activity.house_id == this.selectedHouse) &&
+                      (this.selectedStartDate === "All Start Dates" || new Date(activity.timestamp) >= new Date(this.selectedStartDate)) &&
+                      (this.selectedEndDate === "All End Dates" || new Date(activity.timestamp) <= new Date(this.selectedEndDate));
+          });
+      },
+      distinctCameras() {
+          return [...new Set(this.activities.map(activity => activity.camera_id))];
+      },
+      distinctHouses() {
+          return [...new Set(this.activities.map(activity => activity.house_id))];
+      },
+      distinctStartDates() {
+          return [...new Set(this.activities.map(activity => activity.timestamp.split('T')[0]))];
+      },
+      distinctEndDates() {
+          return this.distinctStartDates; // Since you want distinct dates, we can reuse the distinctStartDates
+      },
+      // Calculating the total number of pages
+      totalPages() {
+        // Calculate total pages based on filtered activities and items per page
+        return Math.ceil(this.filteredActivities.length / this.itemsPerPage);
+      },
 
-    // Getting the set of items to display on the current page
-    currentActivities() {
-      const start = (this.currentPage - 1) * this.itemsPerPage;
-      return this.activities.slice(start, start + this.itemsPerPage);
-    },
-},
+      // Getting the set of items to display on the current page
+      currentActivities() {
+         // Get the activities for the current page based on the filtered activities
+        const start = (this.currentPage - 1) * this.itemsPerPage;
+        const end = start + this.itemsPerPage;
+        return this.filteredActivities.slice(start, end);
+      },
+  },
+  watch: {
+    // Watch for changes in the selected filters
+    selectedCamera: 'refreshPagination',
+    selectedHouse: 'refreshPagination',
+    selectedStartDate: 'refreshPagination',
+    selectedEndDate: 'refreshPagination',
+  },
   methods: {
     async fetchActivities() {
       try {
@@ -520,6 +531,10 @@ export default {
     },
     getActivityColor(activity) {
       return this.activityColors[activity] || 'bg-gray-200';  // Return 'bg-gray-200' as default if no match is found
+    },
+    refreshPagination() {
+      this.currentPage = 1;
+      // Update other pagination variables if needed
     },
     // Navigate to the next page
     nextPage() {

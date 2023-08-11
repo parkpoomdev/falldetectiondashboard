@@ -50,6 +50,10 @@
                   class="w-full text-left block rounded-md p-3 hover:bg-gray-200 dark:hover:bg-gray-700">
                   Activity Detection  
                 </router-link>
+                <router-link to="/component/activitytimeline"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-200 dark:hover:bg-gray-700">
+                  Activity Timeline
+                </router-link>
               </template>
             </menu-accordion>
           </div>

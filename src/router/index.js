@@ -15,6 +15,7 @@ import Login from "../views/layouts/auth/Login.vue";
 import Register from "../views/layouts/auth/Register.vue";
 import ForgotPassword from "../views/layouts/auth/forgot-password.vue";
 import ActivityDashboard from "../views/components/activitydashboard.vue";
+import ActivityTimeline from "../views/components/activitytimeline.vue";
 
 // layouts
 import Blank from "../views/layouts/Blank.vue";
@@ -92,6 +93,12 @@ const routes = [
     meta: {
       title: "Activity Dashboard" + appname,
     },
+  },
+  { 
+    path: "/component/activitytimeline",
+    name: "Activity Timeline",
+    component: ActivityTimeline,
+    meta: { title: "Activity Timeline" + appname },
   },
 
   // layouts

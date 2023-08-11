@@ -42,7 +42,9 @@
     "vue-lazyload": "^3.0.0",
     "vue-perfect-scrollbar": "^0.2.1",
     "vue-router": "^4.0.3",
+    "vue-timeline": "^0.1.0",
     "vue-timeline-component": "^0.1.6",
+    "vue-visjs": "^0.6.0",
     "vue3-apexcharts": "^1.4.1",
     "vue3-perfect-scrollbar": "^1.6.0"
   },
