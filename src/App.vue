@@ -1,6 +1,14 @@
 <template>
   <!-- App -->
+
+  <!--  <notifications />-->
+<!--  <notifications width="100%" />-->
+  <notifications width="100%"/>
+
   <div class="flex bg-gray-50 font-lexend dark:bg-gray-900">
+
+
+
     <div
       v-if="!$route.meta.hideNav"
       class="lg:block"

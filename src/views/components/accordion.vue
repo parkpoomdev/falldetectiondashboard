@@ -81,8 +81,8 @@
           </thead>
           <tbody>
             <!-- Loop through the activities for the current page -->
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50" 
-                v-for="(activity, index) in currentActivities" 
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50"
+                v-for="(activity, index) in currentActivities"
                 :key="activity.activity_id">
 
               <td class="px-6 py-4">{{ activity.timestamp }}</td>
@@ -348,6 +348,7 @@ export default {
       const colors = ['rgba(174,255,99,0.6)', 'rgba(2,71,255,0.6)', 'rgba(255, 206, 86, 0.6)', 'rgba(239,0,0,0.97)'];
 
       const datasets = {};
+
       uniqueActivityTypes.forEach((type, index) => {
         datasets[type] = {
           data: [],

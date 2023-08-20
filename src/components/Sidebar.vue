@@ -54,6 +54,10 @@
                   class="w-full text-left block rounded-md p-3 hover:bg-gray-200 dark:hover:bg-gray-700">
                   Activity Timeline
                 </router-link>
+                <router-link to="/component/fallincident"
+                             class="w-full text-left block rounded-md p-3 hover:bg-gray-200 dark:hover:bg-gray-700">
+                  Fall Incident
+                </router-link>
               </template>
             </menu-accordion>
           </div>
