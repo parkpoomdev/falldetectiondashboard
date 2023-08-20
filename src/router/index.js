@@ -17,6 +17,7 @@ import ForgotPassword from "../views/layouts/auth/forgot-password.vue";
 import ActivityDashboard from "../views/components/activitydashboard.vue";
 import ActivityTimeline from "../views/components/activitytimeline.vue";
 import FallIncident from "../views/components/FallIncident.vue";
+import RealtimeActivityShow from "../views/components/realtimeactivityshow.vue";
 
 // layouts
 import Blank from "../views/layouts/Blank.vue";
@@ -106,6 +107,12 @@ const routes = [
     name: "Fall Incident",
     component: FallIncident,
     meta: { title: "Fall Incident" + appname },
+  },
+  {
+    path: "/component/realtimeactivityshow",
+    name: "Realtime Activity",
+    component: RealtimeActivityShow,
+    meta: { title: "Realtime Activity" + appname },
   },
 
 
