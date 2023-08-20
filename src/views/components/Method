@@ -1,0 +1,61 @@
+methods: {
+      // ... other methods
+
+      async fetchActivities() {
+        // ... fetching activities logic
+
+        // Transforming into an array of activities
+        if (snapshot.exists()) {
+          this.activities = Object.values(snapshot.val());
+          console.log("Database", this.activities );
+        } else {
+          console.log("No activities found!");
+        }
+      },
+
+      plotChart() {
+        const dataPoints = [];
+        const uniqueActivityTypes = new Set();
+
+        for (let activity of this.activities) {
+          dataPoints.push({
+            x: activity.activity_type,
+            y: moment(activity.timestamp, "YYYY-MM-DD hh:mm A").toDate(),
+          });
+          uniqueActivityTypes.add(activity.activity_type);
+        }
+
+        const activityTypeCategories = Array.from(uniqueActivityTypes);
+
+        const ctx = document.getElementById('activityChart').getContext('2d');
+        this.chart = new Chart(ctx, {
+          type: 'scatter',
+          data: {
+            datasets: [{
+              label: 'Activities',
+              data: dataPoints,
+              pointRadius: 5,
+            }]
+          },
+          options: {
+            scales: {
+              x: {
+                type: 'category',
+                labels: activityTypeCategories,
+              },
+              y: {
+                type: 'time',
+              }
+            }
+          }
+        });
+      }
+    },
+    watch: {
+      activities(newVal) {
+        if (newVal && newVal.length > 0) {
+          this.plotChart();
+        }
+      }
+    }
+  };
