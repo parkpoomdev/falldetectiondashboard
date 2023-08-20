@@ -16,41 +16,139 @@
           {{ member }}
         </option>
       </select>
+      <br/>
 
-      <table v-if="filteredActivities.length">
-        <thead>
-        <tr>
-          <th>Activity Name</th>
-          <th>Activity Type</th>
-          <!-- Add other columns as needed -->
-        </tr>
-        </thead>
-        <tbody>
-        <tr v-for="activity in filteredActivities" :key="activity.id"> <!-- Assuming each activity has an id -->
-          <td>{{ activity.family_member }}</td>
-          <td>{{ activity.activity_type }}</td>
-          <!-- Add other columns based on your data structure -->
-        </tr>
-        </tbody>
-      </table>
-
-<!--      <div v-for="activity in filteredActivities" :key="activity.id">-->
-<!--        &lt;!&ndash; Assuming each activity has an id &ndash;&gt;-->
-<!--        {{ activity.activity_name }} &lt;!&ndash; Replace with your actual data structure fields &ndash;&gt;-->
-<!--      </div>-->
+<!--      <button @click="jumpToFall">Jump to Fall</button>-->
 
     </div>
+
+    <div class="timeline">
+      <ul>
+        <li v-for="activity in filteredActivities" :key="activity.id">
+          <span>{{ activity.date }}</span>
+          <div class="content element" :style="activity.activity_type === 'fall' ? {'background-color': '#fdedea'} : {}">
+            <h3>{{ activity.family_member }}</h3>
+              <p>
+                {{ activity.activity_type }}
+                <br/>
+                {{ activity.timestamp }}
+              </p>
+          </div>
+
+        </li>
+
+        <!-- Display this when there are no filtered activities -->
+        <li class="forselect" v-if="!filteredActivities.length">
+          <span style="margin-bottom: 10px">Select Family Member to see the fall incident</span>
+          <div class="content element">
+            <h3>Family Member</h3>
+            <p>
+              Activity Type Information
+            </p>
+          </div>
+        </li>
+
+        <!-- ... other existing list items ... -->
+      </ul>
+    </div>
+
   </div>
 </template>
 
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.content{
+  background:#e5effa;
+  border: 2px solid #7fa3cb;
+  padding: 8px;
+  border-radius: 9px;
+}
+.timeline{
+  width:800px;
+  /*background-color:#072736;*/
+  color:#fff;
+  padding:30px 20px;
+  /*box-shadow:0px 0px 10px rgba(0,0,0,.5);*/
+}
+.timeline ul{
+  list-style-type:none;
+  border-left:2px solid #094a68;
+  padding:10px 5px;
+}
+.timeline ul li{
+  padding:4px 20px;
+  position:relative;
+  cursor:pointer;
+  transition:.5s;
+}
+.timeline ul li span{
+  display:inline-block;
+  background-color:#1685b8;
+  border-radius:25px;
+  padding:2px 5px;
+  font-size:15px;
+  text-align:center;
+}
+.timeline ul li .content h3{
+  color:#34ace0;
+  font-size:17px;
+  padding-top:5px;
+}
+.timeline ul li .content p{
+  padding:5px 0px 15px 0px;
+  font-size:18px;
+  color: black;
+}
+.timeline ul li:before{
+  position:absolute;
+  content:'';
+  width:10px;
+  height:10px;
+  background-color:#34ace0;
+  border-radius:50%;
+  left:-11px;
+  top:28px;
+  transition:.5s;
+}
+.timeline ul li:hover{
+  /*background-color:#071f2a;*/
+}
+.timeline ul li:hover:before{
+  /* background-color:#0F0;
+  box-shadow:0px 0px 10px 2px #0F0; */
+}
+.element {
+  background-color: #b1e9ff;
+  transition: background-color 0.3s ease;
+  animation-name: fadeIn, slideIn;
+  animation-duration: 1s, 2s;
+  animation-delay: 0s, 1s;
+}
+.element:hover {
+  background-color: #77daff;
+}
+@media (max-width:300px){
+  .timeline{
+    width:100%;
+    padding:30px 5px 30px 10px;
+  }
+  .timeline ul li .content h3{
+    color:#34ace0;
+    font-size:15px;
+  }
+
+}
+
+</style>
 
 <script>
-
   import {initializeApp} from 'firebase/app';
   import 'firebase/database';
-  // import {dbRef, getDatabase, ref, onValue} from "firebase/database";
   import { getDatabase, ref as dbRef, push, set, get, onValue} from "firebase/database";
-
+  import { Timeline, TimelineItem, TimelineTitle } from 'vue-cute-timeline'
+  import 'vue-cute-timeline/dist/index.css'
 
   const firebaseConfig = {
     apiKey: "AIzaSyDbfcijUitgAt8-dVKbtD4mDXU8SNUFDJQ",
@@ -65,6 +163,8 @@
 
   initializeApp(firebaseConfig);
   const db = getDatabase();
+
+  const theme = 'red';
 
   export default {
     data() {
@@ -84,11 +184,7 @@
     },
     watch: {
       selectedFamilyMember(newValue, oldValue) {
-        if (newValue !== 'All Families') {
-          this.fetchFilteredData(newValue);
-        } else {
-          // Handle case for "All Families", maybe fetch all data or do something else
-        }
+        this.fetchFilteredData(newValue);
       }
     },
     mounted() {
@@ -122,25 +218,30 @@
         });
       },
       async fetchFilteredData(familyName) {
-
         const activitiesRef = dbRef(db, 'activities_lists');
         let filteredData = [];
 
         onValue(activitiesRef, (snapshot) => {
           if (snapshot.exists()) {
             snapshot.forEach(data => {
-              if (data.val().family_member === familyName) {
+              if (data.val().family_member === familyName || familyName === 'All Families') {
                 filteredData.push(data.val());
               }
             });
 
-            this.filteredActivities = filteredData; // Assuming you have a reactive data property for this
+            // Sort the filtered data based on timestamp in descending order
+            filteredData.sort((a, b) => {
+              return new Date(b.timestamp) - new Date(a.timestamp);
+            });
+
+            this.filteredActivities = filteredData;
 
           } else {
             console.log("No activities found!");
           }
         });
       }
+
     }
 
   }

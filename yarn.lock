@@ -9080,6 +9080,11 @@ vue-lazyload@^3.0.0:
   resolved "https://registry.npmjs.org/vue-lazyload/-/vue-lazyload-3.0.0.tgz"
   integrity sha512-h2keL/Rj550dLgesgOtXJS9qOiSMmuJNeVlfNAYV1/IYwOQYaWk5mFJlwRxmZDK9YC5gECcFLYYj7z1lKSf9ug==
 
+vue-light-timeline@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.npmjs.org/vue-light-timeline/-/vue-light-timeline-1.0.3.tgz"
+  integrity sha512-L84+qFqx+1sQCIs1dvUjsuqDrENmV+gaGfC8O0pz+sUxAhJQVR5jTySFXfOTIPvG/j6rNIFlgQCXigx8jGP6pA==
+
 vue-loader@^17.0.0:
   version "17.0.0"
   resolved "https://registry.npmjs.org/vue-loader/-/vue-loader-17.0.0.tgz"
@@ -9170,7 +9175,7 @@ vue-visjs@^0.6.0:
     vue-runtime-helpers "^1.1.2"
     xss "^1.0.8"
 
-"vue@^2 || ^3.2.13", vue@^2.4.2, "vue@^2.6.14 || ^3.2.0", "vue@^2.7.0 || ^3.2.0", vue@^3.0.0, "vue@^3.0.0-0 || ^2.6.0", vue@^3.0.11, vue@^3.0.2, vue@^3.0.5, vue@^3.2.0, vue@^3.2.13, vue@^3.2.4, "vue@> 3.0.0", vue@>=3.0.0, vue@3.2.31, vue@3.x:
+"vue@^2 || ^3.2.13", vue@^2.1.8, vue@^2.4.2, "vue@^2.6.14 || ^3.2.0", "vue@^2.7.0 || ^3.2.0", vue@^3.0.0, "vue@^3.0.0-0 || ^2.6.0", vue@^3.0.11, vue@^3.0.2, vue@^3.0.5, vue@^3.2.0, vue@^3.2.13, vue@^3.2.4, "vue@> 3.0.0", vue@>=3.0.0, vue@3.2.31, vue@3.x:
   version "3.2.31"
   resolved "https://registry.npmjs.org/vue/-/vue-3.2.31.tgz"
   integrity sha512-odT3W2tcffTiQCy57nOT93INw1auq5lYLLYtWpPYQQYQOOdHiqFct9Xhna6GJ+pJQaF67yZABraH47oywkJgFw==

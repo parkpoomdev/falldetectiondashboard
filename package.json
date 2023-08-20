@@ -1,5 +1,5 @@
 {
-  "name": "windzo",
+  "name": "Telehealth",
   "version": "1.0.1",
   "description": "Free Open Source Template Dashboard Admin Vue Tailwind CSS",
   "private": false,
@@ -43,6 +43,7 @@
     "vue-chartjs": "^4.1.2",
     "vue-graph": "^0.9.3",
     "vue-lazyload": "^3.0.0",
+    "vue-light-timeline": "^1.0.3",
     "vue-perfect-scrollbar": "^0.2.1",
     "vue-router": "^4.0.3",
     "vue-snotify": "^3.2.1",
