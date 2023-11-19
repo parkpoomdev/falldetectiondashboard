@@ -4,9 +4,9 @@
     <!-- sidebar head -->
     <div class="sidebar-head p-4">
       <router-link to="/" exact class="flex">
-        <img class="w-8 mt-1" src="@/assets/logo/logo.svg" alt="logo windzo" />
+        <img class="w-8 mt-1" src="@/assets/logo/logo-telehealth-circle.png" alt="logo windzo" />
         <h2 class="text-2xl font-normal ml-3 mt-2 text-gray-800 dark:text-gray-200" translate="no">
-          Fall Detection System<span class="text-primary">.</span>
+          Telehealth System<span class="text-primary">.</span>
         </h2>
       </router-link>
       <div class="bg-gray-700 absolute mt-3 dark:block hidden rounded-md py-1 px-2 text-xs text-gray-200">

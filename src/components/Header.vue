@@ -148,7 +148,7 @@
           <div class="user-avatar flex p-1 cursor-pointer rounded-md">
             <div>
               <img
-                src="../assets/img/user.jpg"
+                src="../assets/img/telehealth-icon-profile.png"
                 class="rounded-full mr-4 w-10 h-10 p-1 ring-1 ring-gray-300 dark:ring-gray-500"
                 alt=""
               />

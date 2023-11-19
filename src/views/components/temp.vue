@@ -116,15 +116,25 @@ import Dashboard from "@/views/Dashboard.vue";
 // import Snotify from 'vue-snotify';
 // import Snotify from 'vue-snotify';
 
+// const firebaseConfig = {
+//   apiKey: "AIzaSyDbfcijUitgAt8-dVKbtD4mDXU8SNUFDJQ",
+//   authDomain: "telehealth-project-df1b0.firebaseapp.com",
+//   databaseURL: "https://telehealth-project-df1b0-default-rtdb.asia-southeast1.firebasedatabase.app",
+//   projectId: "telehealth-project-df1b0",
+//   storageBucket: "telehealth-project-df1b0.appspot.com",
+//   messagingSenderId: "634800475333",
+//   appId: "1:634800475333:web:30d8f4edbc386c98ccb4ac",
+//   measurementId: "G-N353X7F0D9"
+// };
 const firebaseConfig = {
-  apiKey: "AIzaSyDbfcijUitgAt8-dVKbtD4mDXU8SNUFDJQ",
-  authDomain: "telehealth-project-df1b0.firebaseapp.com",
-  databaseURL: "https://telehealth-project-df1b0-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "telehealth-project-df1b0",
-  storageBucket: "telehealth-project-df1b0.appspot.com",
-  messagingSenderId: "634800475333",
-  appId: "1:634800475333:web:30d8f4edbc386c98ccb4ac",
-  measurementId: "G-N353X7F0D9"
+  apiKey: "AIzaSyDILC8ph12BiCuLrr1af6truM6OYCzBNo0",
+  authDomain: "fall-data-analytics-62e33.firebaseapp.com",
+  databaseURL: "https://fall-data-analytics-62e33-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "fall-data-analytics-62e33",
+  storageBucket: "fall-data-analytics-62e33.appspot.com",
+  messagingSenderId: "305819022730",
+  appId: "1:305819022730:web:f32fc3a878725f38bb4473",
+  measurementId: "G-6RWX9S9BG5"
 };
 
 initializeApp(firebaseConfig);
